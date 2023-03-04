@@ -2,15 +2,22 @@
     {
         "id": 0,
         "category": "Business",
-        "name": "tap1",
-        "imgURL": "url",
+        "name": "The Not Bad At All",
+        "imgURL": "https://www.deltafaucet.com/sites/delta/files/2019-12/bath-sink-faucets-stryke_7.jpg",
         "price": "35"
     },
     {
         "id": 1,
         "category": "Economy",
-        "name": "faucet2",
-        "imgURL": "url2",
-        "price": "30"
+        "name": "Filthy Frank Faucet",
+        "imgURL": "https://external-preview.redd.it/BypACzWrZLRjDIKRbMOY9YTDaqF0VMOZFVYFHVNwByI.jpg?auto=webp&s=fd217477a5687b07957db0ee826c74acca549ebf",
+        "price": "3"
+    },
+    {
+        "id": 2,
+        "category": "Premium",
+        "name": "The Desparramer Derramer",
+        "imgURL": "https://do5nkkzntcenb.cloudfront.net/Project/Sites/Lixil/shared/HERO-Image-With-Page-Title/Grohe/Category/Bath-Faucet/Lineare/bathroom-sink-faucets-cat-banner-1.jpg?h=848&la=en-US&w=1500",
+        "price": "650"
     }
 ]
