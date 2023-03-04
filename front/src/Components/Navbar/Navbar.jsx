@@ -6,7 +6,7 @@ function Navbar() {
   return (
     <div className="navbar-main">
       <Link to={"/"}>
-        <h3>The Tap Store</h3>
+        <h3>TAP 101</h3>
       </Link>
       <Link to={"/list"}>
         <p>Check our products!</p>

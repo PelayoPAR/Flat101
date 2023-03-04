@@ -3,4 +3,17 @@
     flex-direction: row;
     justify-content: space-around;
     align-items: center;
+    background-color: black;
+    color: white;
+    padding: 1.5rem;
+}
+
+.navbar-main a{
+    margin: 0 1rem;
+    color: white;
+    text-decoration: none;
+}
+
+.navbar-main a:hover{
+    text-decoration: underline;
 }

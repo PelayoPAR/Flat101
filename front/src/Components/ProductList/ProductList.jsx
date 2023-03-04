@@ -1,17 +1,24 @@
 import React, { useEffect, useState } from "react"
 import productService from "../../../service/product.service"
+import ProductItem from "./ProductItem/ProductItem"
 
 function ProductList() {
   const [productList, setProductList] = useState([])
+  const [isLoading, setIsLoading] = useState(true)
+  const [isError, setIsError] = useState(false)
 
   useEffect(() => {
     let products = []
 
     productService
       .getProducts()
-      .then((result) => setProductList(result.data))
+      .then((result) => {
+        setProductList(result.data)
+        setIsLoading(false)
+      })
       .catch((err) => {
         console.error(err)
+        setIsError(true)
       })
 
     // try {
@@ -23,14 +30,24 @@ function ProductList() {
     // }
   }, [])
 
-  return (
-    <div>
-      <h4>Product Catalog</h4>
-      {productList.map((product) => {
-        return <p key={product.id}>{product.name}</p>
-      })}
-    </div>
-  )
+  if (isLoading) {
+    return <h3>Loading...</h3>
+  }
+  if (isError) {
+    return (
+      <h3>Oopsies! There was an error. Please try refreshing the page...</h3>
+    )
+  }
+  if (productList.length > 0) {
+    return (
+      <div>
+        <h4>Product Catalog</h4>
+        {productList.map((product, index) => {
+          return <ProductItem key={index} product={product} />
+        })}
+      </div>
+    )
+  }
 }
 
 export default ProductList
