@@ -6,7 +6,11 @@ class ProductService {
   }
 
   createProduct = async (requestBody) => {
-    return this.api.post("/products", requestBody)
+    return await this.api.post("/products", requestBody)
+  }
+
+  getProducts = async () => {
+    return await this.api.get("/products")
   }
 }
 
