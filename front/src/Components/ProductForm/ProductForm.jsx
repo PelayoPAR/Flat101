@@ -33,7 +33,7 @@ function ProductForm() {
         <fieldset className="fieldset">
           <legend>Introduce your product</legend>
           <div className="prod-category-div">
-            <label htmlFor="product-category">Product Category:</label>
+            <label htmlFor="product-category">Product Category: </label>
             <select
               id="product-category"
               name="product-category"
@@ -55,7 +55,7 @@ function ProductForm() {
           </div>
           <div className="product-form-div">
             <div>
-              <label htmlFor="product-name">Product Name:</label>
+              <label htmlFor="product-name">Product Name: </label>
               <input
                 type="text"
                 id="product-name"
@@ -66,7 +66,7 @@ function ProductForm() {
               />
             </div>
             <div>
-              <label htmlFor="product-img">Product Image URL:</label>
+              <label htmlFor="product-img">Product Image URL: </label>
               <input
                 type="text"
                 id="product-img"
@@ -77,7 +77,7 @@ function ProductForm() {
               />
             </div>
             <div>
-              <label htmlFor="product-price">Price in Euro:</label>
+              <label htmlFor="product-price">Price in Euro: </label>
               <input
                 type="number"
                 id="product-price"
