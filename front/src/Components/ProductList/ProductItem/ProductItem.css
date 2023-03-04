@@ -1,0 +1,25 @@
+.product-item-div {
+    display: flex;
+    flex-direction: column;
+    border: 1px solid lightgray;
+    width: 80%;
+    align-self: center;
+    justify-self: center;
+    margin: 0.25rem 0;
+    padding: 1rem 0 0 ;
+}
+
+.product-item-div img{
+    display: flex;
+    align-self: center;
+    max-width: 50%;
+    height: auto;
+}
+
+.item-category {
+    font-size: 1.25rem;
+}
+
+.item-name {
+    font-size: 1.5rem;
+}

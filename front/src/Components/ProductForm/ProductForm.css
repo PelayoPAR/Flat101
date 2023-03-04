@@ -33,13 +33,13 @@
 
 .form-button {
     margin-top: 1rem;
-    background-color: black;
-    color: white;
+    background-color: #F9CA0F;
+    color: black;
     font-weight: 600;
 }
 
 .form-button:hover{
-    background-color: white;
+    background-color: #f9ca0f81;
     color: black;
 }
 

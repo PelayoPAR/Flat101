@@ -4,24 +4,26 @@ import "./ProductForm.css"
 
 function ProductForm() {
   const categoriesArr = ["Premium", "Business", "Economy"]
-  const [productCategory, setProductCategory] = useState("")
+  const [productCategory, setProductCategory] = useState("Business")
   const [productName, setProductName] = useState("")
   const [productURL, setProductURL] = useState("")
   const [productPrice, setProductPrice] = useState("")
 
   async function handleSubmit(event) {
     event.preventDefault()
-    try {
-      await productService.createProduct([
-        {
-          category: productCategory,
-          name: productName,
-          imgURL: productURL,
-          price: productPrice,
-        },
-      ])
-    } catch (err) {
-      console.error(err)
+    if (productName.length > 3) {
+      try {
+        await productService.createProduct([
+          {
+            category: productCategory,
+            name: productName,
+            imgURL: productURL,
+            price: productPrice,
+          },
+        ])
+      } catch (err) {
+        console.error(err)
+      }
     }
   }
 
@@ -41,7 +43,7 @@ function ProductForm() {
               }}
             >
               <option></option>
-              <optgroup label="Categories"></optgroup>
+              <optgroup label="- Categories -"></optgroup>
               {categoriesArr.map((category, index) => {
                 return (
                   <option value={category} key={index}>

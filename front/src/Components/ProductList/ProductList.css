@@ -1,0 +1,9 @@
+.product-list-div {
+    display: flex;
+    flex-direction: column;
+    margin-top: 1.5rem;
+}
+
+.product-list-div h4{
+    margin-bottom: 0.5rem;
+}

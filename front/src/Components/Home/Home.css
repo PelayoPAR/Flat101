@@ -1,0 +1,10 @@
+.home-div {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.home-div h3 {
+    margin: 1rem 0;
+}
