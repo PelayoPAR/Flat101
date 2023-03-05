@@ -7,8 +7,6 @@
 .main-form-div form {
     display: flex;
     flex-direction: column;
-    /* justify-content: space-around; */
-    /* align-items: center; */
 }
 
 .main-form-div fieldset {
@@ -36,14 +34,10 @@
     background-color: #F9CA0F;
     color: black;
     font-weight: 600;
+    border-radius: 5px;
 }
 
 .form-button:hover{
     background-color: #f9ca0f81;
     color: black;
 }
-
-/* .form-button:focus {
-    background-color: rgb(50, 50, 50);
-    color: white;
-} */
