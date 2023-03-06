@@ -1,0 +1,14 @@
+version: '3.7'
+services:
+  backend:
+    container_name: server
+    restart: always
+    build: ./server
+    ports:
+      - "5000:5000"
+  frontend:
+    container_name: front
+    restart: always
+    build: ./front
+    ports:
+      - "3000:3000"

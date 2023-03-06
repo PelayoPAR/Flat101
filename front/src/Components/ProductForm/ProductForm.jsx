@@ -8,6 +8,7 @@ function ProductForm() {
   const [productName, setProductName] = useState("")
   const [productURL, setProductURL] = useState("")
   const [productPrice, setProductPrice] = useState("")
+  const [productSent, setProductSent] = useState(false)
 
   async function handleSubmit(event) {
     event.preventDefault()
@@ -21,13 +22,22 @@ function ProductForm() {
             price: productPrice,
           },
         ])
+        //The actual sending of the product is not being controlled:
+        setProductSent(true)
       } catch (err) {
         console.error(err)
       }
     }
   }
 
-  return (
+  return productSent ? (
+    <div>
+      <h4>Product Sent!</h4>
+      <button className="form-button" onClick={() => setProductSent(false)}>
+        OK
+      </button>
+    </div>
+  ) : (
     <div className="main-form-div">
       <form className="form" onSubmit={handleSubmit}>
         <fieldset className="fieldset">
