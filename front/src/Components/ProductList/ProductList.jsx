@@ -2,12 +2,16 @@ import React, { useEffect, useState } from "react"
 import productService from "../../../service/product.service"
 import ProductItem from "./ProductItem/ProductItem"
 import "./ProductList.css"
+import { useSelector } from "react-redux"
 
 function ProductList() {
   const [productList, setProductList] = useState([])
   const [isLoading, setIsLoading] = useState(true)
   const [isError, setIsError] = useState(false)
-
+  const storeProducts = useSelector((state) => {
+    return state
+  })
+  console.log("storeee", storeProducts)
   useEffect(() => {
     // let products = []
 
@@ -15,12 +19,12 @@ function ProductList() {
       .getProducts()
       .then((result) => {
         setProductList(result.data)
-        setIsLoading(false)
       })
       .catch((err) => {
         console.error(err)
         setIsError(true)
       })
+      .finally(() => setIsLoading(false))
 
     // try {
     //   products = productService.getProducts().then((result) => {
