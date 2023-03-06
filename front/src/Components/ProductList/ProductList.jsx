@@ -14,9 +14,8 @@ function ProductList() {
   const storeProducts = Object.values(productObject)
   const dispatch = useDispatch()
 
-  console.log("storeee", storeProducts)
-
   useEffect(() => {
+    // ToDo: Load product list on App.jsx
     productService
       .getProducts()
       .then((result) => {
