@@ -1,6 +1,6 @@
 import { createSlice } from "@reduxjs/toolkit"
 
-const initialState = []
+const initialState = {}
 
 const productSlice = createSlice({
   name: "Products",
@@ -8,7 +8,9 @@ const productSlice = createSlice({
   reducers: {
     loadProducts(state, action) {
       const products = action.payload
-      state.products = products
+      products.forEach((product) => {
+        state[product.id] = product
+      })
     },
   },
 })

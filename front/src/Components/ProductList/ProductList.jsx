@@ -2,7 +2,8 @@ import React, { useEffect, useState } from "react"
 import productService from "../../../service/product.service"
 import ProductItem from "./ProductItem/ProductItem"
 import "./ProductList.css"
-import { useSelector } from "react-redux"
+import { useSelector, useDispatch } from "react-redux"
+import { loadProducts } from "../../slices/productSlice"
 
 function ProductList() {
   const [productList, setProductList] = useState([])
@@ -11,7 +12,10 @@ function ProductList() {
   const storeProducts = useSelector((state) => {
     return state
   })
+  const dispatch = useDispatch()
+
   console.log("storeee", storeProducts)
+
   useEffect(() => {
     // let products = []
 
@@ -19,6 +23,7 @@ function ProductList() {
       .getProducts()
       .then((result) => {
         setProductList(result.data)
+        dispatch(loadProducts(result.data))
       })
       .catch((err) => {
         console.error(err)
