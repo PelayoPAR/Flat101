@@ -6,23 +6,20 @@ import { useSelector, useDispatch } from "react-redux"
 import { loadProducts } from "../../slices/productSlice"
 
 function ProductList() {
-  const [productList, setProductList] = useState([])
   const [isLoading, setIsLoading] = useState(true)
   const [isError, setIsError] = useState(false)
-  const storeProducts = useSelector((state) => {
-    return state
+  const productObject = useSelector((state) => {
+    return state.products
   })
+  const storeProducts = Object.values(productObject)
   const dispatch = useDispatch()
 
   console.log("storeee", storeProducts)
 
   useEffect(() => {
-    // let products = []
-
     productService
       .getProducts()
       .then((result) => {
-        setProductList(result.data)
         dispatch(loadProducts(result.data))
       })
       .catch((err) => {
@@ -30,14 +27,6 @@ function ProductList() {
         setIsError(true)
       })
       .finally(() => setIsLoading(false))
-
-    // try {
-    //   products = productService.getProducts().then((result) => {
-    //     return result.data
-    //   })
-    // } catch (err) {
-    //   console.error(err)
-    // }
   }, [])
 
   if (isLoading) {
@@ -48,11 +37,11 @@ function ProductList() {
       <h3>Oopsies! There was an error. Please try refreshing the page...</h3>
     )
   }
-  if (productList.length > 0) {
+  if (storeProducts.length > 0) {
     return (
       <div className="product-list-div">
         <h4>Product Catalog</h4>
-        {productList.map((product, index) => {
+        {storeProducts.map((product, index) => {
           return <ProductItem key={index} product={product} />
         })}
       </div>
