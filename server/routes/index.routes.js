@@ -14,7 +14,6 @@ indexRouter.get("/products", (req, res) => {
 indexRouter.post("/products", (req, res) => {
   const newProducts = req.body
   productList = [...productList, ...newProducts]
-  console.log(productList)
   res.status(204).send("OK")
 })
 
